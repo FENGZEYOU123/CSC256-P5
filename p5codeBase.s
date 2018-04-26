@@ -5,14 +5,38 @@
 
 .text
 .globl main
+
+
+##
+# int sumOfDoubleEvenPlace(int number);
+# List Used Registers Here:
+# sum --> $s0
+# digit --> $s1
+# 
+
 # #
 # int getDigit(int number);
 # List Used Registers Here:
 #
 # #
+
+main:
+li $s0,89744563
+li $s1,98756421
+li $s2,0
+li $s3,0
+move $t1,$s0
+jal sumOfDoubleEvenPlace
+move $s2,$t0
+move $t1,$s1
+jal sumOfDoubleEvenPlace
+move $s3,$t0
+
+
+
 sumOfDoubleEvenPlace:
 
-li $t0,0 
+li $t0,0  # load immediate $t0 = 0 
 li $a1,10
 li $a2,100
 div $t1,$a1
@@ -40,34 +64,6 @@ div $t3,$a1
 mflo $t4
 add $t0,$t0,$t4
 j return
-
-
-
-
-##
-# int sumOfDoubleEvenPlace(int number);
-# List Used Registers Here:
-# sum --> $s0
-# digit --> $s1
-# 
-##
-
-
-
-main:
-li $s0,89744563
-li $s1,98756421
-li $s2,0
-li $s3,0
-move $t1,$s0
-jal sumOfDoubleEvenPlace
-move $s2,$t0
-move $t1,$s1
-jal sumOfDoubleEvenPlace
-move $s3,$t0
-
-
-
 
   # code for first function call
 
