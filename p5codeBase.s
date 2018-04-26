@@ -12,9 +12,9 @@
 # #
 sumOfDoubleEvenPlace:
 
-li $t0,0
-li $a1,10
-li $a2,100
+addi $t0,0 
+addi $a1,10
+addi $a2,100
 div $t1,$a1
 mflo $t1
 while:
@@ -55,10 +55,10 @@ j return
 
 
 main:
-li $s0,89744563
-li $s1,98756421
-li $s2,0
-li $s3,0
+addi $s0,89744563
+addi $s1,98756421
+addi $s2,0
+addi $s3,0
 move $t1,$s0
 jal sumOfDoubleEvenPlace
 move $s2,$t0
